@@ -1,24 +1,19 @@
-using System.Diagnostics;
-
 namespace DesafioPOO.Models
 {
-    // TODO: Herdar da classe "Smartphone" OK
-    [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
+    // TODO: Herdar da classe "Smartphone"
     public class Nokia : Smartphone
     {
-        public Nokia(string numero) : base(numero)
+
+        //construtor por herança
+        public Nokia(string numero, string modelo, string imei, int memoria) : base(numero, modelo, imei, memoria)
         {
+
         }
 
+        // TODO: Sobrescrever o método "InstalarAplicativo"
         public override void InstalarAplicativo(string nomeApp)
         {
-            Console.WriteLine("Instalando app para sistema android");
+            Console.WriteLine($"Instalando aplicativo {nomeApp} para sistema android...");
         }
-
-        private string GetDebuggerDisplay()
-        {
-            return ToString();
-        }
-        // TODO: Sobrescrever o método "InstalarAplicativo" OK
     }
 }
